@@ -25,3 +25,8 @@ export async function login(email, password) {
     axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     return res.data.user;
 }
+
+export async function createRequest(data) {
+    const res = await axios.post('/credit-requests', data);
+    return res.data;
+}

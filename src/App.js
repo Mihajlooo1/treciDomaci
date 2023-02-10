@@ -8,6 +8,7 @@ import axios from "axios";
 import ClientsPage from './pages/ClientsPage';
 import CreditsPage from './pages/CreditsPage';
 import LoginPage from './pages/LoginPage';
+import CreateRequestPage from './pages/CreateRequestPage';
 
 axios.defaults.baseURL = 'http://localhost:8000/api'
 function App() {
@@ -27,6 +28,11 @@ function App() {
           {
             !user && (
               <Route path='/login' element={<LoginPage />} />
+            )
+          }
+          {
+            user && (
+              <Route path='/create-request' element={<CreateRequestPage />} />
             )
           }
         </Routes>
