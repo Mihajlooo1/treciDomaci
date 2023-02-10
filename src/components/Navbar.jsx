@@ -14,7 +14,7 @@ export default function Navbar() {
                         <NavLink className='nav-link' to='/'>Credit requests</NavLink>
                     </li>
                     <li className="nav-item mx-auto">
-                        <NavLink className='nav-link' to='/client'>Clients</NavLink>
+                        <NavLink className='nav-link' to='/clients'>Clients</NavLink>
                     </li>
                     <li className="nav-item mx-auto">
                         <NavLink className='nav-link' to='/credits'>Credits</NavLink>

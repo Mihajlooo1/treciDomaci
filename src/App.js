@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { UserContext } from './context';
 import CreditRequestsPage from './pages/CreditRequestsPage';
 import axios from "axios";
+import ClientsPage from './pages/ClientsPage';
 
 axios.defaults.baseURL = 'http://localhost:8000/api'
 function App() {
@@ -19,6 +20,7 @@ function App() {
       >
         <Routes>
           <Route path='/' element={<CreditRequestsPage />} />
+          <Route path='/clients' element={<ClientsPage />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>
