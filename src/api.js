@@ -8,3 +8,9 @@ export async function getClients() {
     const res = await axios.get('/clients');
     return res.data;
 }
+
+
+export async function getCredits() {
+    const res = await axios.get('/credits');
+    return res.data;
+}
