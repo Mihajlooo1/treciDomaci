@@ -1,6 +1,6 @@
-import axios from 'axios';
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { logout } from '../api';
 import { useUserContext } from '../context';
 
 export default function Navbar() {
@@ -29,17 +29,17 @@ export default function Navbar() {
                 </ul>
                 {
                     user && (
-                        <button
-                            onClick={async () => {
-                                await axios.post('/logout', {}, {
-                                    headers: {
-                                        authorization: `Bearer ${user.token}`
-                                    }
-                                });
-                                setUser(undefined);
-                            }}
-                            className="btn btn-sm btn-outline-secondary mr-4"
-                            type="button">Logout</button>
+                        <ul className='navbar-nav ml-auto' >
+                            <li className="nav-item mx-auto">
+                                <NavLink
+                                    to='/'
+                                    className='nav-link'
+                                    onClick={async () => {
+                                        await logout();
+                                        setUser(undefined);
+                                    }}>Logout</NavLink>
+                            </li>
+                        </ul>
                     )
 
                 }

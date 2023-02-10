@@ -14,3 +14,14 @@ export async function getCredits() {
     const res = await axios.get('/credits');
     return res.data;
 }
+
+export async function logout() {
+    await axios.post('/logout');
+    axios.defaults.headers.common.Authorization = ''
+}
+
+export async function login(email, password) {
+    const res = await axios.post('/login', { email, password });
+    axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
+    return res.data.user;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Slider({ min, max, value, onChange, label }) {
+export default function Slider({ min, max, value, onChange, label, required }) {
 
     const onChangeHandler = e => {
         const val = Number(e.currentTarget.value);
@@ -12,8 +12,8 @@ export default function Slider({ min, max, value, onChange, label }) {
     return (
         <div className='form-group'>
             <label >{label}</label>
-            <input type='range' value={value} min={min} max={max} onChange={onChangeHandler} />
-            <input type='number' value={value} min={min} max={max} onChange={onChangeHandler} />
+            <input className='form-control' required={required} type='range' value={value} min={min} max={max} onChange={onChangeHandler} />
+            <input className='form-control' required={required} type='number' value={value} min={min} max={max} onChange={onChangeHandler} />
         </div>
     )
 }

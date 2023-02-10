@@ -7,6 +7,7 @@ import CreditRequestsPage from './pages/CreditRequestsPage';
 import axios from "axios";
 import ClientsPage from './pages/ClientsPage';
 import CreditsPage from './pages/CreditsPage';
+import LoginPage from './pages/LoginPage';
 
 axios.defaults.baseURL = 'http://localhost:8000/api'
 function App() {
@@ -20,9 +21,14 @@ function App() {
         }}
       >
         <Routes>
-          <Route path='/' element={<CreditRequestsPage />} />
+          <Route path='*' element={<CreditRequestsPage />} />
           <Route path='/clients' element={<ClientsPage />} />
           <Route path='/credits' element={<CreditsPage />} />
+          {
+            !user && (
+              <Route path='/login' element={<LoginPage />} />
+            )
+          }
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>
